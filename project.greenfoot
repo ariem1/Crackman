@@ -1,5 +1,5 @@
 #Greenfoot project file
-class.CrackMan.image=Crackman_down.png
+class.CrackMan.image=Crackman_Right.png
 class.Ghost1.image=Ghost1.png
 class.Ghost2.image=Ghost2.png
 class.Ghost3.image=Ghost3.png
@@ -12,7 +12,7 @@ editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
-height=1085
+height=830
 package.numDependencies=0
 package.numTargets=15
 project.charset=UTF-8
@@ -135,7 +135,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1147
+width=1550
 world.lastInstantiated=MainMenu
 xPosition=0
 yPosition=0
