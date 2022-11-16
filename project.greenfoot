@@ -1,5 +1,5 @@
 #Greenfoot project file
-class.CrackMan.image=Crackman_Right.png
+class.CrackMan.image=Crackman.png
 class.Ghost1.image=Ghost1.png
 class.Ghost2.image=Ghost2.png
 class.Ghost3.image=Ghost3.png
@@ -14,10 +14,10 @@ dependency1.type=UsesDependency
 dependency2.from=CrackMan
 dependency2.to=Powerup
 dependency2.type=UsesDependency
-editor.fx.0.height=737
-editor.fx.0.width=814
-editor.fx.0.x=288
-editor.fx.0.y=20
+editor.fx.0.height=830
+editor.fx.0.width=1550
+editor.fx.0.x=-7
+editor.fx.0.y=-7
 height=830
 package.numDependencies=2
 package.numTargets=15
