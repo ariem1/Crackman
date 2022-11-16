@@ -9,6 +9,15 @@ import greenfoot.*;
 public class CrackMan extends Actor
 {
     private GreenfootImage image = getImage();
+    private int direction;
+
+    /**
+     * 
+     */
+    public CrackMan()
+    {
+        direction = 0;
+    }
 
     /**
      * Act - do whatever the CrackMan wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,18 +34,37 @@ public class CrackMan extends Actor
      */
     public void moving()
     {
-        move(2);
-        if (Greenfoot.isKeyDown("w")) {
-            setRotation(270);
+        if (Greenfoot.isKeyDown("d")) {
+            direction = 0;
         }
-        if (Greenfoot.isKeyDown("s")) {
-            setRotation(90);
+        if (Greenfoot.isKeyDown("w")) {
+            direction = 1;
         }
         if (Greenfoot.isKeyDown("a")) {
+            direction = 2;
+        }
+        if (Greenfoot.isKeyDown("s")) {
+            direction = 3;
+        }
+        if (direction == 0) {
+            move(2);
+            setImage("Crackman_right.png");
+            setRotation(0);
+        }
+        if (direction == 1) {
+            move(2);
+            setImage("Crackman_right.png");
+            setRotation(270);
+        }
+        if (direction == 2) {
+            move(2);
+            setImage("Crackman.png");
             setRotation(180);
         }
-        if (Greenfoot.isKeyDown("d")) {
-            setRotation(0);
+        if (direction == 3) {
+            move(2);
+            setImage("Crackman_right.png");
+            setRotation(90);
         }
     }
 
