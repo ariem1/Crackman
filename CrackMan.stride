@@ -59,14 +59,14 @@
                 <if condition="direction==0" condition-java="direction == 0" enable="true">
                     <ifStatements>
                         <call expression="move(2)" expression-java="move(2)" enable="true"/>
-                        <call expression="setImage(&quot;Crackman_right.png&quot;)" expression-java="setImage(&quot;Crackman_right.png&quot;)" enable="true"/>
+                        <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(0)" expression-java="setRotation(0)" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="direction==1" condition-java="direction == 1" enable="true">
                     <ifStatements>
                         <call expression="move(2)" expression-java="move(2)" enable="true"/>
-                        <call expression="setImage(&quot;Crackman_right.png&quot;)" expression-java="setImage(&quot;Crackman_right.png&quot;)" enable="true"/>
+                        <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(270)" expression-java="setRotation(270)" enable="true"/>
                     </ifStatements>
                 </if>
@@ -80,7 +80,7 @@
                 <if condition="direction==3" condition-java="direction == 3" enable="true">
                     <ifStatements>
                         <call expression="move(2)" expression-java="move(2)" enable="true"/>
-                        <call expression="setImage(&quot;Crackman_right.png&quot;)" expression-java="setImage(&quot;Crackman_right.png&quot;)" enable="true"/>
+                        <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(90)" expression-java="setRotation(90)" enable="true"/>
                     </ifStatements>
                 </if>

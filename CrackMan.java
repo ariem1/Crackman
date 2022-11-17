@@ -48,12 +48,12 @@ public class CrackMan extends Actor
         }
         if (direction == 0) {
             move(2);
-            setImage("Crackman_right.png");
+            setImage("Crackman_Right.png");
             setRotation(0);
         }
         if (direction == 1) {
             move(2);
-            setImage("Crackman_right.png");
+            setImage("Crackman_Right.png");
             setRotation(270);
         }
         if (direction == 2) {
@@ -63,7 +63,7 @@ public class CrackMan extends Actor
         }
         if (direction == 3) {
             move(2);
-            setImage("Crackman_right.png");
+            setImage("Crackman_Right.png");
             setRotation(90);
         }
     }
