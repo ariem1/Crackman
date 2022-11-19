@@ -29,6 +29,7 @@ public class CrackMan extends Actor
      */
     public void act()
     {
+        canMoveleft();
         moving();
         eatTacos();
         if (eatPowerup()) {
@@ -41,6 +42,8 @@ public class CrackMan extends Actor
      */
     public void moving()
     {
+        int x = getX();
+        int y = getY();
         if (Greenfoot.isKeyDown("d")) {
             direction = 0;
         }
@@ -54,25 +57,26 @@ public class CrackMan extends Actor
             direction = 3;
         }
         if (direction == 0) {
-            move(speed);
+            x = x + 2;
             setImage("Crackman_Right.png");
             setRotation(0);
         }
         if (direction == 1) {
-            move(speed);
+            y = y - 2;
             setImage("Crackman_Right.png");
             setRotation(270);
         }
-        if (direction == 2) {
-            move(speed);
+        if (direction == 2 && canMoveleft()) {
+            x = x - 2;
             setImage("Crackman.png");
             setRotation(180);
         }
         if (direction == 3) {
-            move(speed);
+            y = y + 2;
             setImage("Crackman_Right.png");
             setRotation(90);
         }
+        setLocation(x, y);
     }
 
     /**
@@ -115,5 +119,20 @@ public class CrackMan extends Actor
         else {
             move(speed);
         }
+    }
+
+    /**
+     * 
+     */
+    public boolean canMoveleft()
+    {
+        boolean moveLeft = true;
+        int width = getImage().getWidth();
+        int height = getImage().getHeight();
+        /* Something wrong with this if statement, possibly the calling of the class??*/
+        if (getObjectsAtOffset(width / -2, height / -2, Wall.class) == null) {
+            moveLeft = false;
+        }
+        return moveLeft;
     }
 }
