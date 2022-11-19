@@ -1,3 +1,4 @@
+// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -13,5 +14,14 @@ public class Ghost1 extends Ghosts
      */
     public void act()
     {
+        mouvement();
+    }
+
+    /**
+     * 
+     */
+    public void mouvement()
+    {
+        move(3);
     }
 }

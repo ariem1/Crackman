@@ -10,6 +10,11 @@ public class CrackMan extends Actor
 {
     private GreenfootImage image = getImage();
     private int direction;
+    private boolean power = false;
+    private int speed = 2;
+    private int timer;
+    private int spedUp = speed + 2;
+    private int score = 0;
 
     /**
      * 
@@ -26,7 +31,9 @@ public class CrackMan extends Actor
     {
         moving();
         eatTacos();
-        eatPowerup();
+        if (eatPowerup()) {
+            poweredUp();
+        }
     }
 
     /**
@@ -47,22 +54,22 @@ public class CrackMan extends Actor
             direction = 3;
         }
         if (direction == 0) {
-            move(2);
+            move(speed);
             setImage("Crackman_Right.png");
             setRotation(0);
         }
         if (direction == 1) {
-            move(2);
+            move(speed);
             setImage("Crackman_Right.png");
             setRotation(270);
         }
         if (direction == 2) {
-            move(2);
+            move(speed);
             setImage("Crackman.png");
             setRotation(180);
         }
         if (direction == 3) {
-            move(2);
+            move(speed);
             setImage("Crackman_Right.png");
             setRotation(90);
         }
@@ -76,17 +83,37 @@ public class CrackMan extends Actor
         Actor taco = getOneIntersectingObject(Tacos.class);
         if (taco != null) {
             getWorld().removeObject(taco);
+            /* Score transfer is needed here*/
         }
     }
 
     /**
      * 
      */
-    public void eatPowerup()
+    public boolean eatPowerup()
     {
         Actor line = getOneIntersectingObject(Powerup.class);
         if (line != null) {
             getWorld().removeObject(line);
+            timer = 300;
+            power = true;
+        }
+        return power;
+    }
+
+    /**
+     * 
+     */
+    public void poweredUp()
+    {
+        if (power) {
+            timer = timer - 1;
+            if (timer >= 1) {
+                move(spedUp);
+            }
+        }
+        else {
+            move(speed);
         }
     }
 }

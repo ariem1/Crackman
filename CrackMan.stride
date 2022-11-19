@@ -9,6 +9,11 @@
     <fields>
         <variable access="private" type="GreenfootImage" type-java="GreenfootImage" name="image" value="getImage()" value-java="getImage()" enable="true"/>
         <variable access="private" type="int" type-java="int" name="direction" enable="true"/>
+        <variable access="private" type="boolean" type-java="boolean" name="power" value="false" value-java="false" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="speed" value="2" value-java="2" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="timer" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="spedUp" value="speed+2" value-java="speed + 2" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="score" value="0" value-java="0" enable="true"/>
     </fields>
     <constructors>
         <constructor access="public" enable="true">
@@ -28,7 +33,11 @@
             <body>
                 <call expression="moving()" expression-java="moving()" enable="true"/>
                 <call expression="eatTacos()" expression-java="eatTacos()" enable="true"/>
-                <call expression="eatPowerup()" expression-java="eatPowerup()" enable="true"/>
+                <if condition="eatPowerup()" condition-java="eatPowerup()" enable="true">
+                    <ifStatements>
+                        <call expression="poweredUp()" expression-java="poweredUp()" enable="true"/>
+                    </ifStatements>
+                </if>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="moving" enable="true">
@@ -58,28 +67,28 @@
                 </if>
                 <if condition="direction==0" condition-java="direction == 0" enable="true">
                     <ifStatements>
-                        <call expression="move(2)" expression-java="move(2)" enable="true"/>
+                        <call expression="move(speed)" expression-java="move(speed)" enable="true"/>
                         <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(0)" expression-java="setRotation(0)" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="direction==1" condition-java="direction == 1" enable="true">
                     <ifStatements>
-                        <call expression="move(2)" expression-java="move(2)" enable="true"/>
+                        <call expression="move(speed)" expression-java="move(speed)" enable="true"/>
                         <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(270)" expression-java="setRotation(270)" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="direction==2" condition-java="direction == 2" enable="true">
                     <ifStatements>
-                        <call expression="move(2)" expression-java="move(2)" enable="true"/>
+                        <call expression="move(speed)" expression-java="move(speed)" enable="true"/>
                         <call expression="setImage(&quot;Crackman.png&quot;)" expression-java="setImage(&quot;Crackman.png&quot;)" enable="true"/>
                         <call expression="setRotation(180)" expression-java="setRotation(180)" enable="true"/>
                     </ifStatements>
                 </if>
                 <if condition="direction==3" condition-java="direction == 3" enable="true">
                     <ifStatements>
-                        <call expression="move(2)" expression-java="move(2)" enable="true"/>
+                        <call expression="move(speed)" expression-java="move(speed)" enable="true"/>
                         <call expression="setImage(&quot;Crackman_Right.png&quot;)" expression-java="setImage(&quot;Crackman_Right.png&quot;)" enable="true"/>
                         <call expression="setRotation(90)" expression-java="setRotation(90)" enable="true"/>
                     </ifStatements>
@@ -95,11 +104,12 @@
                 <if condition="taco!=null" condition-java="taco != null" enable="true">
                     <ifStatements>
                         <call expression="getWorld().removeObject(taco)" expression-java="getWorld().removeObject(taco)" enable="true"/>
+                        <comment xml:space="preserve">Score transfer is needed here</comment>
                     </ifStatements>
                 </if>
             </body>
         </method>
-        <method access="public" type="void" type-java="void" name="eatPowerup" enable="true">
+        <method access="public" type="boolean" type-java="boolean" name="eatPowerup" enable="true">
             <javadoc xml:space="preserve"/>
             <params/>
             <throws/>
@@ -108,7 +118,30 @@
                 <if condition="line!=null" condition-java="line != null" enable="true">
                     <ifStatements>
                         <call expression="getWorld().removeObject(line)" expression-java="getWorld().removeObject(line)" enable="true"/>
+                        <assign dest="timer" dest-java="timer" src="300" src-java="300" enable="true"/>
+                        <assign dest="power" dest-java="power" src="true" src-java="true" enable="true"/>
                     </ifStatements>
+                </if>
+                <return value="power" value-java="power" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="poweredUp" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="power" condition-java="power" enable="true">
+                    <ifStatements>
+                        <assign dest="timer" dest-java="timer" src="timer-1" src-java="timer - 1" enable="true"/>
+                        <if condition="timer&gt;=1" condition-java="timer &gt;= 1" enable="true">
+                            <ifStatements>
+                                <call expression="move(spedUp)" expression-java="move(spedUp)" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                    <else>
+                        <call expression="move(speed)" expression-java="move(speed)" enable="true"/>
+                    </else>
                 </if>
             </body>
         </method>
