@@ -161,6 +161,20 @@
                 <call expression="wall_Right10.setLocation(711,477)" expression-java="wall_Right10.setLocation(711, 477)" enable="true"/>
                 <call expression="wall_Right10.setLocation(706,536)" expression-java="wall_Right10.setLocation(706, 536)" enable="true"/>
                 <call expression="wall_Right10.setLocation(712,520)" expression-java="wall_Right10.setLocation(712, 520)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall,586,120)" expression-java="addObject(wall, 586, 120)" enable="true"/>
+                <variable type="Wall" type-java="Wall" name="wall2" value="new Wall()" value-java=" new Wall()" enable="true"/>
+                <call expression="addObject(wall2,585,272)" expression-java="addObject(wall2, 585, 272)" enable="true"/>
+                <call expression="removeObject(wall_Left7)" expression-java="removeObject(wall_Left7)" enable="true"/>
+                <call expression="removeObject(wall_Left6)" expression-java="removeObject(wall_Left6)" enable="true"/>
+                <call expression="removeObject(wall)" expression-java="removeObject(wall)" enable="true"/>
+                <call expression="removeObject(wall2)" expression-java="removeObject(wall2)" enable="true"/>
+                <call expression="removeObject(wall_Right8)" expression-java="removeObject(wall_Right8)" enable="true"/>
+                <call expression="removeObject(wall_Right9)" expression-java="removeObject(wall_Right9)" enable="true"/>
+                <call expression="wall_Down11.setLocation(748,436)" expression-java="wall_Down11.setLocation(748, 436)" enable="true"/>
+                <call expression="wall_Down11.setLocation(721,427)" expression-java="wall_Down11.setLocation(721, 427)" enable="true"/>
+                <call expression="removeObject(wall_Down11)" expression-java="removeObject(wall_Down11)" enable="true"/>
+                <call expression="removeObject(wall_Right10)" expression-java="removeObject(wall_Right10)" enable="true"/>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="act" enable="true">

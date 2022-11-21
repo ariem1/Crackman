@@ -159,6 +159,20 @@ public class GameWorld extends World
         wall_Right10.setLocation(711, 477);
         wall_Right10.setLocation(706, 536);
         wall_Right10.setLocation(712, 520);
+        Wall wall =  new  Wall();
+        addObject(wall, 586, 120);
+        Wall wall2 =  new  Wall();
+        addObject(wall2, 585, 272);
+        removeObject(wall_Left7);
+        removeObject(wall_Left6);
+        removeObject(wall);
+        removeObject(wall2);
+        removeObject(wall_Right8);
+        removeObject(wall_Right9);
+        wall_Down11.setLocation(748, 436);
+        wall_Down11.setLocation(721, 427);
+        removeObject(wall_Down11);
+        removeObject(wall_Right10);
     }
 
     /**

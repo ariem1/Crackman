@@ -14,7 +14,6 @@ public class LOGO_GameName extends Actor
      */
     public LOGO_GameName()
     {
-        getImage().scale(500, 300);
     }
 
     /**

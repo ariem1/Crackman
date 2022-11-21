@@ -8,13 +8,13 @@ import greenfoot.*;
  */
 public class Ghost1 extends Ghosts
 {
+    public GifImage Ghost1 =  new  GifImage("Ghost1.gif");
 
     /**
      * 
      */
     public Ghost1()
     {
-        turn(Greenfoot.getRandomNumber(91));
     }
 
     /**
@@ -24,6 +24,7 @@ public class Ghost1 extends Ghosts
     {
         mouvement();
         wallCollide();
+        setImage(Ghost1.getCurrentImage());
     }
 
     /**
@@ -57,7 +58,7 @@ public class Ghost1 extends Ghosts
             turn(90);
         }
         if (isTouching(Wall.class)) {
-            setLocation(getX() - 2, getY() - 2);
+            setLocation(getX() - 10, getY() + 2);
         }
     }
 }

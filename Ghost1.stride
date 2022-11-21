@@ -6,15 +6,15 @@
         <import target="greenfoot.*" enable="true"/>
     </imports>
     <implements/>
-    <fields/>
+    <fields>
+        <variable access="public" type="GifImage" type-java="GifImage" name="Ghost1" value="new GifImage(&quot;Ghost1.gif&quot;)" value-java=" new GifImage(&quot;Ghost1.gif&quot;)" enable="true"/>
+    </fields>
     <constructors>
         <constructor access="public" enable="true">
             <javadoc xml:space="preserve"/>
             <params/>
             <throws/>
-            <body>
-                <call expression="turn(Greenfoot.getRandomNumber(91))" expression-java="turn(Greenfoot.getRandomNumber(91))" enable="true"/>
-            </body>
+            <body/>
         </constructor>
     </constructors>
     <methods>
@@ -25,6 +25,7 @@
             <body>
                 <call expression="mouvement()" expression-java="mouvement()" enable="true"/>
                 <call expression="wallCollide()" expression-java="wallCollide()" enable="true"/>
+                <call expression="setImage(Ghost1.getCurrentImage())" expression-java="setImage(Ghost1.getCurrentImage())" enable="true"/>
             </body>
         </method>
         <method access="public" type="void" type-java="void" name="mouvement" enable="true">
@@ -67,7 +68,7 @@
                 </if>
                 <if condition="isTouching(Wall.class)" condition-java="isTouching(Wall.class)" enable="true">
                     <ifStatements>
-                        <call expression="setLocation(getX()-2,getY()-2)" expression-java="setLocation(getX() - 2, getY() - 2)" enable="true"/>
+                        <call expression="setLocation(getX()-10,getY()+2)" expression-java="setLocation(getX() - 10, getY() + 2)" enable="true"/>
                     </ifStatements>
                 </if>
             </body>
