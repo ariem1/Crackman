@@ -24,7 +24,7 @@ public class SplashScreen extends World
     public void act()
     {
         if (exit()) {
-            Greenfoot.setWorld( new MainMenu());
+            Greenfoot.setWorld( new  MainMenu());
         }
     }
 
@@ -46,9 +46,7 @@ public class SplashScreen extends World
      */
     private void prepare()
     {
-        Powerup powerup =  new Powerup();
-        addObject(powerup, 263, 766);
-        CrackMan crackMan =  new CrackMan();
-        addObject(crackMan, 451, 569);
+        GreenfootImage drawedImage =  new  GreenfootImage("VanierLOGO.png");
+        getBackground().drawImage(drawedImage, 100, 200);
     }
 }

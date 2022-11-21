@@ -10,11 +10,20 @@ public class Ghost1 extends Ghosts
 {
 
     /**
+     * 
+     */
+    public Ghost1()
+    {
+        turn(Greenfoot.getRandomNumber(91));
+    }
+
+    /**
      * Act - do whatever the Ghost1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
         mouvement();
+        wallCollide();
     }
 
     /**
@@ -23,5 +32,32 @@ public class Ghost1 extends Ghosts
     public void mouvement()
     {
         move(3);
+        
+    }
+
+    /**
+     * 
+     */
+    public void wallCollide()
+    {
+        int x = getX();
+        int y = getY();
+        if (isTouching(Wall_Right.class)) {
+            setLocation(getX() - 10, getY() - 10);
+            turn(90);
+        }
+        if (isTouching(Wall_Up.class)) {
+            setLocation(getX() + 3, getY() + 3);
+        }
+        if (isTouching(Wall_Down.class)) {
+            setLocation(getX() - 3, getY() - 3);
+        }
+        if (isTouching(Wall_Left.class)) {
+            setLocation(getX() + 10, getY() + 10);
+            turn(90);
+        }
+        if (isTouching(Wall.class)) {
+            setLocation(getX() - 2, getY() - 2);
+        }
     }
 }

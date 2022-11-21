@@ -51,10 +51,8 @@ That is: create the initial objects and add them to the world.</javadoc>
             <params/>
             <throws/>
             <body>
-                <variable type="Powerup" type-java="Powerup" name="powerup" value="new Powerup()" value-java=" new Powerup()" enable="true"/>
-                <call expression="addObject(powerup,263,766)" expression-java="addObject(powerup, 263, 766)" enable="true"/>
-                <variable type="CrackMan" type-java="CrackMan" name="crackMan" value="new CrackMan()" value-java=" new CrackMan()" enable="true"/>
-                <call expression="addObject(crackMan,451,569)" expression-java="addObject(crackMan, 451, 569)" enable="true"/>
+                <variable type="GreenfootImage" type-java="GreenfootImage" name="drawedImage" value="new GreenfootImage(&quot;VanierLOGO.png&quot;)" value-java=" new GreenfootImage(&quot;VanierLOGO.png&quot;)" enable="true"/>
+                <call expression="getBackground().drawImage(drawedImage,100,200)" expression-java="getBackground().drawImage(drawedImage, 100, 200)" enable="true"/>
             </body>
         </method>
     </methods>
